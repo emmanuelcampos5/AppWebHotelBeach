@@ -1,0 +1,78 @@
+﻿@model IEnumerable<ApiHotelBeach.Models.Reserva>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+<h1 class="Titulos">Reservaciones</h1>
+
+<p>
+    <a class="btn Botones fas fa-plus" asp-action="Create">  Nueva Reservacion</a>
+</p>
+<table class="table Textos Fondos">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroHabitacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaEntrada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaSalida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadPersonas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadNoches)
+            </th>
+            <th>
+               
+            </th>
+            <th>
+                
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroHabitacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaEntrada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaSalida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadPersonas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadNoches)
+            </td>
+                <th>
+
+                </th>
+                <th>
+
+                </th>
+            <td>
+                    @Html.ActionLink("Editar", "Edit", new {  id=item.ID }, new{@class="btn Botones fas fa-pencil-alt"}) |
+                   @* <button type="button" class="btn Botones text-white fas fa-eye" data-bs-toggle="modal" data-bs-target=#@modalID> Ver Factura</button>*@
+                    @Html.ActionLink("Eliminar", "Delete", new {  id=item.ID }, new{@class="btn btn-danger fas fa-trash-alt"})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

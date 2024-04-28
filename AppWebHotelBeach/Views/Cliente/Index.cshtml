@@ -1,0 +1,120 @@
+﻿@model IEnumerable<AppWebHotelBeach.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="Titulos" >Mantenimiento de Perfiles Clientes</h1>
+
+<p>
+    <a asp-action="CrearCuenta" class="btn Botones fa fa-circle-plus"> Registrar Cliente </a>
+</p>
+<table class="table Fondos Textos">
+    <thead style="font-weight: 600">
+        <tr>            
+            <th>
+                @Html.DisplayNameFor(model => model.Cedula)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoCedula)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DireccionCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.FechaRegistro)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            var modalID = "A" + item.ID;
+        <tr>           
+            <td>
+                @Html.DisplayFor(modelItem => item.Cedula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoCedula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DireccionCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaRegistro)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new {  id=item.ID }, new{@class="btn Botones fas fa-pencil-alt"}) |                   
+                <button type="button" class="btn Botones text-white fas fa-eye" data-bs-toggle="modal" data-bs-target=#@modalID> Detalles</button>           
+                @Html.ActionLink("Eliminar", "Delete", new {  id=item.ID }, new{@class="btn btn-danger fas fa-trash-alt"})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@foreach (var item in Model)
+{
+    var modalID = "A" + item.ID;
+    <div class="modal modal-content-color: rgba(255, 255, 255, 30%) modal-content-border-radius: 20px" id=@modalID data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style=" backdrop-filter: blur(10px)">
+                <div class="modal-header">
+                    <h5 class="modal-title Titulos" style="color:black" id="staticBackdropLabel">Datos del cliente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container Textos"> 
+                        <div class="row">
+                            ID: @Html.DisplayFor(modelItem => item.ID)
+                        </div>                              
+                        <div class="row">
+                            Cedula: @Html.DisplayFor(modelItem => item.Cedula)
+                        </div>
+                        <div class="row">
+                            Tipo de Cedula: @Html.DisplayFor(modelItem => item.TipoCedula)
+                        </div>
+                        <div class="row">
+                            Nombre Completo: @Html.DisplayFor(modelItem => item.NombreCliente)
+                        </div>
+                        <div class="row">
+                            Numero Telefonico: @Html.DisplayFor(modelItem => item.Telefono)
+                        </div>
+                        <div class="row">
+                            Direccion de Residencia: @Html.DisplayFor(modelItem => item.DireccionCliente)
+                        </div>
+                        <div class="row">
+                            Correo Electronico: @Html.DisplayFor(modelItem => item.Email)
+                        </div>
+                        <div class="row">
+                            Fecha de Registro: @Html.DisplayFor(modelItem => item.FechaRegistro)
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn Botones" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,114 @@
+﻿    @model ApiHotelBeach.Models.Reserva
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="Titulos">Reservaciones</h1>
+
+<hr />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 Aliniamiento2">
+            @if (TempData["Mensaje"] != null)
+            {
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                    <strong>@TempData["Mensaje"]</strong>
+                </div>
+            }
+            <form asp-action="Create" class="Fondos Textos">
+                <h3 class="Titulos">Has tu reservación</h3>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="   NumeroHabitacion" class="control-label fas fa-hashtag"></label>
+                    <input asp-for="NumeroHabitacion" class="form-control" />
+                    <span asp-validation-for="NumeroHabitacion" class="text-danger"></span>
+                </div>
+                <div class="row mt-3">
+                    <div class="col form-group">
+                        <label asp-for="  FechaEntrada" class="control-label fas fa-calendar"></label>
+                        <input asp-for="FechaEntrada" class="form-control" />
+                        <span asp-validation-for="FechaEntrada" class="text-danger"></span>
+                    </div>
+                    &nbsp;
+                    <div class="col form-group">
+                        <label asp-for="   FechaSalida" class="control-label fas fa-calendar"></label>
+                        <input asp-for="FechaSalida" class="form-control" />
+                        <span asp-validation-for="FechaSalida" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <label asp-for="PaqueteID" class="control-label fas fa-gift">  Paquetes Disponibles</label>
+                        <select name="ListaPaquete" class="form-select">
+                            <option selected>Seleccione un Paquete</option>
+                            <option value="Hospedaje">Hospedaje</option>
+                            <option value="Alimentacion">Alimentacion</option>
+                            <option value="Todo Incluido">Todo Incluido</option>
+                        </select>
+                    </div>
+                    <div class="col form-group">
+                        <label asp-for="  CantidadPersonas" class="control-label fas fa-users"></label>
+                        <input asp-for="CantidadPersonas" class="form-control" />
+                        <span asp-validation-for="CantidadPersonas" class="text-danger"></span>
+                    </div>
+                </div>              
+                <div class="form-group">
+                    <label asp-for="MetodoPago" class="control-label">   Metodo de Pago</label>
+                    <select id="Datos" name="ListaMetodoPago" onchange="mostrarDatosCheque()" class="form-select" onclick="form-select">
+                        <option selected>Seleccione un método de pago</option>
+                        <option value="Efectivo">Efectivo</option>
+                        <option value="Tarjeta">Tarjeta</option>
+                        <option value="Cheque">Cheque</option>                     
+                    </select>
+                </div>
+                <div class="form-group" id="NumeroCheque" style="display: none;">
+                    <label asp-for="NumeroCheque" class="control-label fas fa-hashtag">  Numero de Cheque</label>
+                    <input asp-for="NumeroCheque" class="form-control" />
+                    <span asp-validation-for="NumeroCheque" class="text-danger"></span>
+                </div>
+                <div class="form-group" id="BancoCheque" style="display: none;">
+                    <label asp-for="BancoCheque" class="control-label fas fa-university">  Banco</label>
+                    <select class="form-select" name="ListaBanco" onclick="form-select">
+                        <option selected>Seleccione el Banco</option>
+                        <option value="Banco Nacional">Banco Nacional</option>
+                        <option value="Banco Nacional de Costa Rica">Banco Nacional de Costa Rica</option>
+                        <option value="Banco BAC San Jose">Banco BAC San Jose</option>
+                        <option value="Banco Davivienda Costa Rica">Banco Davivienda Costa Rica</option>
+                        <option value="Banco Popular">Banco Popular</option>
+                    </select>
+                </div>
+                <div class="form-group mt-4">
+                    <input type="submit" value="Create" class="btn Botones mt-4" />
+                    <a asp-action="Index" class="btn Botones mt-4">  Regresar a la lista</a>
+                </div>             
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+
+<script>
+    function mostrarDatosCheque() {
+        var selecionado = document.getElementById("Datos");
+        var inputNumero = document.getElementById("NumeroCheque");
+        var inputBanco = document.getElementById("BancoCheque");
+
+        if (selecionado.value == "Cheque") 
+        {
+            inputNumero.style.display = "block";
+            inputBanco.style.display = "block";
+        } 
+        else 
+        {
+            inputNumero.style.display = "none";
+            inputBanco.style.display = "none";
+        }
+    }
+</script>
+
+

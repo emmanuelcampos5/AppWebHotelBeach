@@ -1,0 +1,129 @@
+﻿@model ApiHotelBeach.Models.Reserva
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="Titulos">Eliminar Reserva</h1>
+<h3 class="Subtitulo" style="margin-left:20px">¿Segurx de que quieres borrar esto?</h3>
+<div class="Aliniamiento2">
+    <dl  class="row Fondos Textos Tamano">
+        <h4 class="Titulos">Reservas</h4>
+        <hr />
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.NumeroHabitacion)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.NumeroHabitacion)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.FechaEntrada)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.FechaEntrada)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.FechaSalida)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.FechaSalida)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.CantidadPersonas)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.CantidadPersonas)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.MetodoPago)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.MetodoPago)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.NumeroCheque)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.NumeroCheque)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.BancoCheque)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.BancoCheque)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Subtotal)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Subtotal)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Descuento)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Descuento)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.MontoTotalColones)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.MontoTotalColones)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.MontoTotalDolares)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.MontoTotalDolares)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Prima)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Prima)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.Cuota)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.Cuota)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.PaqueteID)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.PaqueteID)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.ClienteID)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.ClienteID)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.EstadoPago)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.EstadoPago)
+        </dd>
+        <dt class = "col-sm-4">
+            @Html.DisplayNameFor(model => model.CantidadNoches)
+        </dt>
+        <dd class = "col-sm-8">
+            @Html.DisplayFor(model => model.CantidadNoches)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete" class="Aliniamiento">
+        <input type="submit" value="   Eliminar" class="btn btn-danger fas fa-trash" /> |
+        <a asp-action="Index" class="btn Botones fas fa-sign-out">   Regresar a la lista</a>
+    </form> 
+
+</div>

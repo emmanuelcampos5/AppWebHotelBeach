@@ -1,0 +1,8 @@
+A:\UCR\Lenguajes para aplicaciones\Proyectos\DesarrolloWeb\AppWebHotelBeach\AppWebHotelBeach\obj\Release\net6.0\AppWebHotelBeach.csproj.AssemblyReference.cache
+A:\UCR\Lenguajes para aplicaciones\Proyectos\DesarrolloWeb\AppWebHotelBeach\AppWebHotelBeach\obj\Release\net6.0\AppWebHotelBeach.GeneratedMSBuildEditorConfig.editorconfig
+A:\UCR\Lenguajes para aplicaciones\Proyectos\DesarrolloWeb\AppWebHotelBeach\AppWebHotelBeach\obj\Release\net6.0\AppWebHotelBeach.AssemblyInfoInputs.cache
+A:\UCR\Lenguajes para aplicaciones\Proyectos\DesarrolloWeb\AppWebHotelBeach\AppWebHotelBeach\obj\Release\net6.0\AppWebHotelBeach.AssemblyInfo.cs
+A:\UCR\Lenguajes para aplicaciones\Proyectos\DesarrolloWeb\AppWebHotelBeach\AppWebHotelBeach\obj\Release\net6.0\AppWebHotelBeach.csproj.CoreCompileInputs.cache
+A:\UCR\Lenguajes para aplicaciones\Proyectos\DesarrolloWeb\AppWebHotelBeach\AppWebHotelBeach\obj\Release\net6.0\AppWebHotelBeach.MvcApplicationPartsAssemblyInfo.cache
+A:\UCR\Lenguajes para aplicaciones\Proyectos\DesarrolloWeb\AppWebHotelBeach\AppWebHotelBeach\obj\Release\net6.0\AppWebHotelBeach.RazorAssemblyInfo.cache
+A:\UCR\Lenguajes para aplicaciones\Proyectos\DesarrolloWeb\AppWebHotelBeach\AppWebHotelBeach\obj\Release\net6.0\AppWebHotelBeach.RazorAssemblyInfo.cs

@@ -1,0 +1,73 @@
+﻿@model AppWebHotelBeach.Models.Cliente
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="Titulos fas fa-pencil">Editar</h1>
+
+<h4 class="Subtitulo" style="font-size: 30px" >Cliente </h4>
+<hr />
+<div class="row">
+    <div class="col-md-4  Aliniamiento">
+        <form asp-action="Edit" class="Fondos Textos" style="font-size:large; font-weight:600; width:600px">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="  ID" class="control-label fas fa-id-badge"></label>
+                <input asp-for="ID" readonly class="form-control" />
+                <span asp-validation-for="ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="  Cedula" class="control-label fas fa-address-card"></label>
+                <input asp-for="Cedula" class="form-control" />
+                <span asp-validation-for="Cedula" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoCedula" class="control-label"></label>
+                <input asp-for="TipoCedula" class="form-control" />
+                <span asp-validation-for="TipoCedula" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="  NombreCliente" class="control-label fas fa-user"></label>
+                <input asp-for="NombreCliente" class="form-control" />
+                <span asp-validation-for="NombreCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="  Telefono" class="control-label fas fa-mobile"></label>
+                <input asp-for="Telefono" class="form-control" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="  DireccionCliente" class="control-label fas fa-map-marker"></label>
+                <input asp-for="DireccionCliente" class="form-control" />
+                <span asp-validation-for="DireccionCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="  Email" class="control-label fas fa-envelope"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div> 
+
+            <div class="form-group">
+                <label asp-for="RoleID" class="control-label fas fa-server">   Elija un rol</label>
+                <select name="listaRoles=" class="form-select" onclick="form-select">
+                    <option value="Rol" selected>Rol</option>
+                    <option value="1">Administrador</option>
+                    <option value="2">Cliente</option>
+                </select>
+            </div>
+            
+            &nbsp;
+
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn Botones" />
+                <a asp-action="Index" class="btn Botones fas fa-arrow-left"> Volver a lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,69 @@
+﻿@model AppWebHotelBeach.Models.Cliente
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="Titulos">Eliminar Cliente</h1>
+<h3 class="Subtitulo" style="margin-left:20px">¿Segurx de que quieres borrar esto?</h3>
+<hr />
+<div class="Aliniamiento2">
+        <dl class="row Fondos Textos Tamano">
+            <h4 class="Titulos">Cliente</h4>
+
+            <dt class="col-sm-4 fas fa-user">
+                @Html.DisplayNameFor(model => model.ID)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.ID)
+            </dd>
+            <dt class="col-sm-4 fas fa-address-card">
+                @Html.DisplayNameFor(model => model.Cedula)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.Cedula)
+            </dd>
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(model => model.TipoCedula)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.TipoCedula)
+            </dd>
+            <dt class="col-sm-4 fas fa-user">
+                @Html.DisplayNameFor(model => model.NombreCliente)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.NombreCliente)
+            </dd>
+            <dt class="col-sm-4 fas fa-mobile">
+                @Html.DisplayNameFor(model => model.Telefono)
+            </dt>
+            <dd class="col-sm-8 ">
+                @Html.DisplayFor(model => model.Telefono)
+            </dd>
+            <dt class="col-sm-4 fas fa-map-marker">
+                @Html.DisplayNameFor(model => model.DireccionCliente)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.DireccionCliente)
+            </dd>
+            <dt class="col-sm-4 fas fa-envelope">
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt class="col-sm-4 fas fa-calendar">
+                @Html.DisplayNameFor(model => model.FechaRegistro)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(model => model.FechaRegistro)
+            </dd>
+        </dl>
+
+    <form asp-action="Delete" class="Aliniamiento">
+        <input type="submit" value="   Eliminar" class="btn btn-danger fas fa-trash" /> |
+        <a asp-action="Index" class="btn Botones fas fa-sign-out">   Regresar a la lista</a>
+    </form> 
+</div>

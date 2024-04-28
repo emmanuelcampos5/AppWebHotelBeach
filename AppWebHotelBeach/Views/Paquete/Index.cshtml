@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ApiHotelBeach.Models.Paquete>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="Titulos">Paquetes Disponibles</h1>
+
+<p>
+    <h3 class="Subtitulo"> Aquí puedes ver los paquetes que te ofrece el Hotel Beach.SA </h3>
+</p>
+<table class="table Textos Fondos">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoPaquete)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Costo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prima)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadCuotas)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoPaquete)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Costo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prima)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadCuotas)
+            </td>           
+        </tr>
+}
+    </tbody>
+</table>
